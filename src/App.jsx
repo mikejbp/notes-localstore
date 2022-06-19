@@ -30,6 +30,13 @@ function App() {
     setShowCompleted(false)
   }
 
+  const handleDelete = (taskID) => {
+    const noteRow = [...tasksItem];
+    const index = tasksItem.findIndex((item) => item.name === item.name);
+    noteRow.splice(index,1);
+    setTasksItem(noteRow);
+  }
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksItem))
   }, [tasksItem])

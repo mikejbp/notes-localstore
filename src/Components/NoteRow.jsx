@@ -12,7 +12,7 @@ export const NoteRow = ({ task, toggleTask }) => {
             onChange={() => toggleTask(task)}
           />
           <Button color="success">Edit</Button>
-          <Button color="danger">Delete</Button>
+          <Button color="danger" onClick={''} >Delete</Button>
         </div>
       </td>
     </tr>

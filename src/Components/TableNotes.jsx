@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Table } from "reactstrap"
 import { NoteRow } from "./NoteRow"
 
-const TableNotes = ({ tasks, toggleTask, showCompleted }) => {
+const TableNotes = ({ tasks, toggleTask, showCompleted, }) => {
   const taskTableRows = (doneValue) => {
     return (
       tasks
