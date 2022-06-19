@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
-import "./CSS/globalStyles.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import NewTask from "./Components/NewTask"
-import ListTasks from "./Components/ListTasks"
+import NewNote from "./Components/NewNote"
+import TableNotes from "./Components/TableNotes"
 import { VisibilityControl } from "./Components/VisibilityControl"
+import ContainerApp from "./Components/Container"
 
 function App() {
   const [tasksItem, setTasksItem] = useState([])
@@ -17,7 +16,7 @@ function App() {
 
   const toggleTask = (task) => {
     setTasksItem(
-      tasksItem.map((t) => (t.name == task.name ? { ...t, done: !t.done } : t))
+      tasksItem.map((t) => (t.name === task.name ? { ...t, done: !t.done } : t))
     )
   }
 
@@ -27,8 +26,8 @@ function App() {
   }, [])
 
   const cleanTasks = () => {
-    setTasksItem(tasksItem.filter((task) => !task.done));
-    setShowCompleted(false);
+    setTasksItem(tasksItem.filter((task) => !task.done))
+    setShowCompleted(false)
   }
 
   useEffect(() => {
@@ -36,28 +35,30 @@ function App() {
   }, [tasksItem])
 
   return (
-    <div className="App">
-      <NewTask createNewTask={createNewTask} />
-      <ListTasks
-        tasks={tasksItem}
-        toggleTask={toggleTask}
-        showCompleted={false}
-      />
-
-      <VisibilityControl
-        isChecked={showCompleted}
-        setShowCompleted={(checked) => setShowCompleted(checked)}
-        cleanTasks={cleanTasks}
-      />
-
-      {showCompleted && (
-        <ListTasks
+    <main className="bg-dark vh-100 text-white text-center">
+      <ContainerApp>
+        <NewNote createNewTask={createNewTask} />
+        <TableNotes
           tasks={tasksItem}
           toggleTask={toggleTask}
-          showCompleted={showCompleted}
+          showCompleted={false}
         />
-      )}
-    </div>
+
+        <VisibilityControl
+          isChecked={showCompleted}
+          setShowCompleted={(checked) => setShowCompleted(checked)}
+          cleanTasks={cleanTasks}
+        />
+
+        {showCompleted && (
+          <TableNotes
+            tasks={tasksItem}
+            toggleTask={toggleTask}
+            showCompleted={showCompleted}
+          />
+        )}
+      </ContainerApp>
+    </main>
   )
 }
 
