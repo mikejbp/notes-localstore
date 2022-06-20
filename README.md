@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## React Notes Localstorage
 ![image](https://user-images.githubusercontent.com/74782928/174505510-b1549ccc-bbed-4540-b314-e7317436cf55.png)
 ![image](https://user-images.githubusercontent.com/74782928/174505512-ee2d94fe-3476-41ae-9c9c-2eb514fac195.png)
