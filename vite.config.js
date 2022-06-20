@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/githubmikejbp-ensolvers-challenge/',
+  base: '/notes-localstore/',
   plugins: [react()],
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
