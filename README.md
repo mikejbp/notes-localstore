@@ -94,5 +94,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### React version 18.0.0
 
 ### Deployment
-
->>>>>>> 9642a0994888b1e53d159f9cacd4881e12c71493
+https://mikejbp.github.io/notes-localstore/
