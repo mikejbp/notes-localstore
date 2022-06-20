@@ -11,8 +11,8 @@ export const NoteRow = ({ task, toggleTask }) => {
             checked={task.done}
             onChange={() => toggleTask(task)}
           />
-          <Button color="success">Edit</Button>
-          <Button color="danger" onClick={''} >Delete</Button>
+          {/* <Button color="success">Edit</Button>
+          <Button color="danger" onClick={''} >Delete</Button> */}
         </div>
       </td>
     </tr>
